@@ -9,8 +9,10 @@
       return {
         category: 'actor',
         query: '',
-        movies: [],
+        movies: [], 
+        list: [],
         details: {}
+        
       }
     },
     methods:{
@@ -34,7 +36,15 @@
       },
       clearDetails: function(){
         this.details = {}
+      }, 
+      addToList: function(){
+        this.list.push(this.details)
+      }, 
+      removeFromList: function(movie){
+        var i = this.list.indexOf(movie)
+        this.list.splice(i,1)
       }
+
     }
   })
 
